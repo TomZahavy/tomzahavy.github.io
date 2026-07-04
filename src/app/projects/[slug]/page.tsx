@@ -66,6 +66,31 @@ export default async function ProjectPage({ params }: Props) {
           <p key={i}>{paragraph}</p>
         ))}
       </div>
+
+      {project.figure && (
+        <figure className="mt-8 overflow-hidden rounded-lg border border-border bg-white">
+          <Image
+            src={project.figure.src}
+            alt={project.figure.alt}
+            width={1800}
+            height={751}
+            sizes="(max-width: 768px) 100vw, 720px"
+            className="w-full"
+          />
+        </figure>
+      )}
+
+      {project.video && (
+        <video
+          src={project.video}
+          className="mt-8 w-full rounded-lg border border-border"
+          autoPlay
+          muted
+          loop
+          playsInline
+          controls
+        />
+      )}
     </div>
   );
 }

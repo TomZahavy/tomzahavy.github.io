@@ -10,6 +10,8 @@ export type Project = {
   image: string;
   links: ProjectLink[];
   body: string[];
+  figure?: { src: string; alt: string };
+  video?: string;
 };
 
 export const featuredProjects: Project[] = [
@@ -40,6 +42,11 @@ export const featuredProjects: Project[] = [
       { label: "Paper", href: "https://arxiv.org/pdf/2606.26299v1" },
       { label: "Crease Patterns", href: "/files/origami_samples.zip" },
     ],
+    figure: {
+      src: "/projects/corigami-pipeline.webp",
+      alt: "COrigami pipeline for Gecko, Peacock, and Beetle models: stickfigure, packing, solving, simulation, RL shaping, and designer shaping",
+    },
+    video: "/projects/corigami-demo.mp4",
     body: [
       "Origami is a unique mix of math, art, and design. Creating Origami involves turning abstract concepts into real-world objects. To tackle this, COrigami calls Gemini to generate a semantic stick figure --an abstract JSON code--refined through a visual feedback loop. It then calls custom packing, solving, shaping, and simulation tools. Driven by another self improvement RL loop, the system produces visually recognizable models represented as SVG crease patterns.",
       "Despite scarce data availability, this approach demonstrates how combining RL with frontier models like Gemini can assist human creativity and produce physical art. The generated patterns serve as mathematically grounded starting points for origami artists to fold and shape into a final, physical design.",
