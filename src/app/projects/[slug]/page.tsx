@@ -71,6 +71,18 @@ export default async function ProjectPage({ params }: Props) {
           playsInline
           controls
         />
+      ) : project.heroNatural ? (
+        <div className="mt-10 overflow-hidden rounded-xl border border-border bg-white p-4">
+          <Image
+            src={project.image}
+            alt={project.title}
+            width={project.heroNatural.width}
+            height={project.heroNatural.height}
+            priority
+            sizes="(max-width: 768px) 100vw, 720px"
+            className="w-full"
+          />
+        </div>
       ) : (
         <div className="relative mt-10 aspect-[16/10] w-full overflow-hidden rounded-xl border border-border">
           <Image
@@ -124,6 +136,33 @@ export default async function ProjectPage({ params }: Props) {
               </figcaption>
             )}
           </figure>
+        </section>
+      )}
+
+      {project.videos && (
+        <section className="mt-12">
+          <h2 className="text-sm font-medium uppercase tracking-wide text-muted">
+            Watch
+          </h2>
+          <div className="mt-4 grid gap-4 sm:grid-cols-3">
+            {project.videos.map((video) => (
+              <figure key={video.id}>
+                <iframe
+                  src={`https://www.youtube-nocookie.com/embed/${video.id}${
+                    video.start ? `?start=${video.start}` : ""
+                  }`}
+                  title={video.title}
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="aspect-video w-full rounded-lg border border-border"
+                />
+                <figcaption className="mt-2 text-sm text-muted">
+                  {video.title}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </section>
       )}
 

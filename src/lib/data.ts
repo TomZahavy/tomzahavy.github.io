@@ -10,8 +10,11 @@ export type Project = {
   image: string;
   links: ProjectLink[];
   body: string[];
+  /** Render the hero image at its natural aspect ratio (no crop), on white. */
+  heroNatural?: { width: number; height: number };
   figure?: { src: string; alt: string; caption?: string };
   video?: string;
+  videos?: { id: string; title: string; start?: number }[];
 };
 
 export const featuredProjects: Project[] = [
@@ -59,16 +62,21 @@ export const featuredProjects: Project[] = [
     title: "PuzzleGen",
     description:
       "Generates original chess puzzles with reinforcement learning, rewarding uniqueness, counter-intuitiveness, and novelty. Evaluated by chess grandmasters and featured on lichess and chess.com.",
-    image: "/projects/puzzle.webp",
+    image: "/projects/puzzlegen-puzzles.webp",
+    heroNatural: { width: 1264, height: 1332 },
     links: [
       { label: "Paper", href: "https://arxiv.org/abs/2510.23881" },
       { label: "GM review", href: "https://arxiv.org/abs/2510.23772" },
-      { label: "Gotham Chess", href: "https://www.youtube.com/watch?v=e47VomRFhAU" },
       { label: "chess.com story", href: "https://www.chess.com/news/view/ai-learns-to-create-original-chess-puzzles-earns-praise-from-grandmasters" },
       { label: "chess.com video", href: "https://youtube.com/shorts/mSB_c27e1eU?si=8q5V3K_VjskURJ-t" },
       { label: "chess.com puzzles", href: "https://www.chess.com/c/2wCTN7Uv2" },
       { label: "lichess blog", href: "https://lichess.org/@/tomas135/blog/ai-generated-chess-puzzles/j4zc0pmZ" },
       { label: "lichess puzzles", href: "https://lichess.org/study/dLYe8R4f" },
+    ],
+    videos: [
+      { id: "e47VomRFhAU", title: "GothamChess" },
+      { id: "DeiD0RVAX7U", title: "Hikaru Nakamura" },
+      { id: "exqXJEO5UHo", title: "Jen Shahade", start: 25 },
     ],
     body: [
       "While strong chess players intuitively recognize the beauty of a position, articulating the precise elements that constitute creativity remains elusive. To address this, we pre-trained generative models on public datasets and then applied reinforcement learning, using novel rewards designed for uniqueness, counter-intuitiveness, realism, and novelty. This approach doubled the number of novel chess puzzles compared to the original training data, while successfully maintaining aesthetic diversity.",
