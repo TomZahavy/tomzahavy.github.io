@@ -10,7 +10,7 @@ export type Project = {
   image: string;
   links: ProjectLink[];
   body: string[];
-  figure?: { src: string; alt: string };
+  figure?: { src: string; alt: string; caption?: string };
   video?: string;
 };
 
@@ -45,6 +45,8 @@ export const featuredProjects: Project[] = [
     figure: {
       src: "/projects/corigami-pipeline.webp",
       alt: "COrigami pipeline for Gecko, Peacock, and Beetle models: stickfigure, packing, solving, simulation, RL shaping, and designer shaping",
+      caption:
+        "From semantic stick figure to physical model — packing, solving, simulation, RL shaping, and a designer's final shaping, shown for a gecko, a peacock, and a beetle.",
     },
     video: "/projects/corigami-demo.mp4",
     body: [
