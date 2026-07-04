@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { featuredProjects } from "@/lib/data";
+import AutoPlayVideo from "@/components/AutoPlayVideo";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -136,6 +137,27 @@ export default async function ProjectPage({ params }: Props) {
               </figcaption>
             )}
           </figure>
+        </section>
+      )}
+
+      {project.gallery && (
+        <section className="mt-12">
+          <h2 className="text-sm font-medium uppercase tracking-wide text-muted">
+            Gallery
+          </h2>
+          <div className="mt-4 grid grid-cols-2 gap-x-4 gap-y-5 sm:grid-cols-3">
+            {project.gallery.map((item) => (
+              <figure key={item.src}>
+                <AutoPlayVideo
+                  src={item.src}
+                  className="aspect-square w-full rounded-lg border border-border object-cover"
+                />
+                <figcaption className="mt-1.5 text-xs text-muted">
+                  {item.title}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </section>
       )}
 

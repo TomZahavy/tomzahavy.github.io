@@ -15,6 +15,7 @@ export type Project = {
   figure?: { src: string; alt: string; caption?: string };
   video?: string;
   videos?: { id: string; title: string; start?: number }[];
+  gallery?: { src: string; title: string }[];
 };
 
 export const featuredProjects: Project[] = [
@@ -51,7 +52,23 @@ export const featuredProjects: Project[] = [
       caption:
         "From semantic stick figure to physical model — packing, solving, simulation, RL shaping, and a designer's final shaping, shown for a gecko, a peacock, and a beetle.",
     },
-    video: "/projects/corigami-demo.mp4",
+    gallery: [
+      { src: "/projects/origami/peacock.mp4", title: "Peacock" },
+      { src: "/projects/origami/moorish-gecko.mp4", title: "Moorish Gecko" },
+      { src: "/projects/origami/wyvern.mp4", title: "Wyvern" },
+      { src: "/projects/origami/mantis.mp4", title: "Mantis" },
+      { src: "/projects/origami/dragonfly.mp4", title: "Dragonfly" },
+      { src: "/projects/origami/scorpion.mp4", title: "Scorpion" },
+      { src: "/projects/origami/boxer-crab.mp4", title: "Boxer Crab" },
+      { src: "/projects/origami/fiddler-crab.mp4", title: "Fiddler Crab" },
+      { src: "/projects/origami/deep-sea-lobster.mp4", title: "Deep Sea Lobster" },
+      { src: "/projects/origami/hoopoe.mp4", title: "Hoopoe" },
+      { src: "/projects/origami/jerboa.mp4", title: "Jerboa" },
+      { src: "/projects/origami/ram.mp4", title: "Ram" },
+      { src: "/projects/origami/elk.mp4", title: "Elk" },
+      { src: "/projects/origami/moose.mp4", title: "Moose" },
+      { src: "/projects/origami/bull-moose.mp4", title: "Bull Moose" },
+    ],
     body: [
       "Origami is a unique mix of math, art, and design. Creating Origami involves turning abstract concepts into real-world objects. To tackle this, COrigami calls Gemini to generate a semantic stick figure --an abstract JSON code--refined through a visual feedback loop. It then calls custom packing, solving, shaping, and simulation tools. Driven by another self improvement RL loop, the system produces visually recognizable models represented as SVG crease patterns.",
       "Despite scarce data availability, this approach demonstrates how combining RL with frontier models like Gemini can assist human creativity and produce physical art. The generated patterns serve as mathematically grounded starting points for origami artists to fold and shape into a final, physical design.",
