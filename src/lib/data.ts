@@ -25,7 +25,7 @@ export const featuredProjects: Project[] = [
     title: "COrigami",
     description:
       "Combines reinforcement learning with Gemini to design origami crease patterns, using a semantic representation and visual feedback loop to fold arbitrary target shapes.",
-    image: "/projects/corigami.jpg",
+    image: "/projects/corigami.webp",
     links: [
       { label: "Paper", href: "https://arxiv.org/abs/2411.13507" },
     ],
@@ -34,7 +34,7 @@ export const featuredProjects: Project[] = [
     title: "PuzzleGen",
     description:
       "Generates original chess puzzles with reinforcement learning, rewarding uniqueness, counter-intuitiveness, and novelty. Evaluated by chess grandmasters and featured on lichess and chess.com.",
-    image: "/projects/puzzle.jpg",
+    image: "/projects/puzzle.webp",
     links: [
       { label: "arXiv", href: "https://arxiv.org/abs/2406.00073" },
       { label: "chess.com", href: "https://www.chess.com/" },
@@ -45,7 +45,7 @@ export const featuredProjects: Project[] = [
     title: "AlphaZero db",
     description:
       "Explores diversity in AI decision-making by training a league of agents with distinct playing styles, revealing multiple qualitatively different ways to play chess and Go at a superhuman level.",
-    image: "/projects/azdb.png",
+    image: "/projects/azdb.webp",
     links: [
       { label: "arXiv", href: "https://arxiv.org/abs/2312.08131" },
       { label: "Quanta Magazine", href: "https://www.quantamagazine.org/" },
@@ -55,7 +55,7 @@ export const featuredProjects: Project[] = [
     title: "LLMs can't jump",
     description:
       "A position paper examining a fundamental limitation of large language models: their difficulty with abductive reasoning, a capacity central to genuine scientific invention.",
-    image: "/projects/llms-cant-jump.jpeg",
+    image: "/projects/llms-cant-jump.webp",
     links: [
       { label: "Paper", href: "https://arxiv.org" },
     ],
