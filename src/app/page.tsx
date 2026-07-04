@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { featuredProjects, socialLinks } from "@/lib/data";
 import ProjectCard from "@/components/ProjectCard";
 
@@ -5,9 +6,14 @@ export default function Home() {
   return (
     <div className="mx-auto max-w-3xl px-6 py-14">
       <section className="flex flex-col items-start gap-6 sm:flex-row sm:items-center">
-        <div className="flex h-28 w-28 shrink-0 items-center justify-center rounded-full border border-border bg-card text-2xl font-medium text-muted">
-          TZ
-        </div>
+        <Image
+          src="/profile.jpg"
+          alt="Tom Zahavy"
+          width={112}
+          height={112}
+          priority
+          className="h-28 w-28 shrink-0 rounded-full border border-border object-cover"
+        />
         <div>
           <h1 className="text-2xl font-semibold tracking-tight">Tom Zahavy</h1>
           <p className="mt-1 text-muted">Senior Research Scientist, Google DeepMind</p>
