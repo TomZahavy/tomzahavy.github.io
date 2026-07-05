@@ -45,7 +45,7 @@ export default async function ProjectPage({ params }: Props) {
         <p className="mt-3 text-lg leading-relaxed text-muted">
           {project.description}
         </p>
-        <div className="mt-5 flex flex-wrap gap-2">
+        <div className="mt-5 flex flex-wrap items-center gap-2">
           {project.links.map((link) => {
             const external = link.href.startsWith("http");
             return (
@@ -60,6 +60,35 @@ export default async function ProjectPage({ params }: Props) {
               </a>
             );
           })}
+
+          {project.linkGroups?.map((group) => (
+            <span
+              key={group.platform}
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 text-sm"
+            >
+              <Image
+                src={group.logo}
+                alt={group.platform}
+                width={16}
+                height={16}
+                className={`h-4 w-4 shrink-0${group.invertOnDark ? " dark:invert" : ""}`}
+              />
+              <span className="text-foreground/50">{group.platform}</span>
+              {group.items.map((item, i) => (
+                <span key={item.label} className="flex items-center">
+                  {i > 0 && <span className="mr-2 text-border">·</span>}
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-accent hover:underline"
+                  >
+                    {item.label}
+                  </a>
+                </span>
+              ))}
+            </span>
+          ))}
         </div>
       </header>
 

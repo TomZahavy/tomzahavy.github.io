@@ -3,12 +3,20 @@ export type ProjectLink = {
   href: string;
 };
 
+export type LinkGroup = {
+  platform: string;
+  logo: string;
+  invertOnDark?: boolean;
+  items: ProjectLink[];
+};
+
 export type Project = {
   slug: string;
   title: string;
   description: string;
   image: string;
   links: ProjectLink[];
+  linkGroups?: LinkGroup[];
   body: string[];
   /** Render the hero image at its natural aspect ratio (no crop), on white. */
   heroNatural?: { width: number; height: number };
@@ -87,11 +95,26 @@ export const featuredProjects: Project[] = [
     links: [
       { label: "Paper", href: "https://arxiv.org/abs/2510.23881" },
       { label: "GM review", href: "https://arxiv.org/abs/2510.23772" },
-      { label: "chess.com story", href: "https://www.chess.com/news/view/ai-learns-to-create-original-chess-puzzles-earns-praise-from-grandmasters" },
-      { label: "chess.com video", href: "https://youtube.com/shorts/mSB_c27e1eU?si=8q5V3K_VjskURJ-t" },
-      { label: "chess.com puzzles", href: "https://www.chess.com/c/2wCTN7Uv2" },
-      { label: "lichess blog", href: "https://lichess.org/@/tomas135/blog/ai-generated-chess-puzzles/j4zc0pmZ" },
-      { label: "lichess puzzles", href: "https://lichess.org/study/dLYe8R4f" },
+    ],
+    linkGroups: [
+      {
+        platform: "chess.com",
+        logo: "/logos/chesscom.png",
+        items: [
+          { label: "story", href: "https://www.chess.com/news/view/ai-learns-to-create-original-chess-puzzles-earns-praise-from-grandmasters" },
+          { label: "video", href: "https://youtube.com/shorts/mSB_c27e1eU?si=8q5V3K_VjskURJ-t" },
+          { label: "puzzles", href: "https://www.chess.com/c/2wCTN7Uv2" },
+        ],
+      },
+      {
+        platform: "lichess",
+        logo: "/logos/lichess.png",
+        invertOnDark: true,
+        items: [
+          { label: "blog", href: "https://lichess.org/@/tomas135/blog/ai-generated-chess-puzzles/j4zc0pmZ" },
+          { label: "puzzles", href: "https://lichess.org/study/dLYe8R4f" },
+        ],
+      },
     ],
     puzzles: [
       { name: "Puzzle 1", fen: "1r1r2k1/Q2p1R1p/2p2R2/1p3pB1/1P4q1/8/5K2/8 w - - 0 1", url: "https://lichess.org/study/dLYe8R4f/gB1e3yi1" },
