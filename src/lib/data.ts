@@ -308,7 +308,8 @@ const basePublications: Publication[] = [
   {
     title: "Mastering board games by external and internal planning with language models",
     authors: ["John Schultz", "Jakub Adamek", "Matej Jusup", "Marc Lanctot", ME, "et al."],
-    venue: "DeepMind, 2024",
+    venue: "ICML 2025",
+    href: "https://openreview.net/pdf?id=KKwBo3u3IW",
     citations: 43,
   },
   {
@@ -536,7 +537,7 @@ const basePublications: Publication[] = [
   },
   {
     title: "Deep Randomized Least Squares Value Iteration",
-    authors: ["Gal Adam", ME, "Oron Anschel", "Nahum Shimkin"],
+    authors: ["Guy Adam", ME, "Oron Anschel", "Nahum Shimkin"],
     venue: "2020",
     citations: 0,
   },
