@@ -117,6 +117,28 @@ export default async function ProjectPage({ params }: Props) {
         )}
       </section>
 
+      {project.embed && (
+        <section className="mt-12">
+          <h2 className="text-sm font-medium uppercase tracking-wide text-muted">
+            Try the puzzles
+          </h2>
+          <div className="mt-4 overflow-hidden rounded-xl border border-border">
+            <iframe
+              src={project.embed.src}
+              title={project.embed.title}
+              loading="lazy"
+              allowFullScreen
+              className="h-[420px] w-full sm:h-[480px]"
+            />
+          </div>
+          {project.embed.caption && (
+            <p className="mt-3 text-sm leading-relaxed text-muted">
+              {project.embed.caption}
+            </p>
+          )}
+        </section>
+      )}
+
       {project.figure && (
         <section className="mt-12">
           <h2 className="text-sm font-medium uppercase tracking-wide text-muted">
@@ -166,9 +188,12 @@ export default async function ProjectPage({ params }: Props) {
           <h2 className="text-sm font-medium uppercase tracking-wide text-muted">
             Watch
           </h2>
-          <div className="mt-4 grid gap-4 sm:grid-cols-3">
+          <div className="mt-4 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 sm:grid sm:grid-cols-3 sm:overflow-x-visible sm:pb-0">
             {project.videos.map((video) => (
-              <figure key={video.id}>
+              <figure
+                key={video.id}
+                className="min-w-[72%] shrink-0 snap-start sm:min-w-0"
+              >
                 <iframe
                   src={`https://www.youtube-nocookie.com/embed/${video.id}${
                     video.start ? `?start=${video.start}` : ""

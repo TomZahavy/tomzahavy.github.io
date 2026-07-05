@@ -16,6 +16,7 @@ export type Project = {
   video?: string;
   videos?: { id: string; title: string; start?: number }[];
   gallery?: { src: string; title: string }[];
+  embed?: { src: string; title: string; caption?: string };
 };
 
 export const featuredProjects: Project[] = [
@@ -90,6 +91,12 @@ export const featuredProjects: Project[] = [
       { label: "lichess blog", href: "https://lichess.org/@/tomas135/blog/ai-generated-chess-puzzles/j4zc0pmZ" },
       { label: "lichess puzzles", href: "https://lichess.org/study/dLYe8R4f" },
     ],
+    embed: {
+      src: "https://lichess.org/study/embed/dLYe8R4f/gB1e3yi1",
+      title: "AI-generated chess puzzles on Lichess",
+      caption:
+        "A selection of the generated puzzles as a Lichess study — use the chapter arrows to move through all nine. The full collection is also on chess.com.",
+    },
     videos: [
       { id: "e47VomRFhAU", title: "GothamChess" },
       { id: "DeiD0RVAX7U", title: "Hikaru Nakamura" },
