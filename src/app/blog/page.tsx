@@ -21,14 +21,6 @@ const posts: Post[] = [
     excerpt:
       "Reflections on AlphaProof — the work before, during, and after reaching silver-medal standard at the International Mathematical Olympiad by teaching itself mathematics in Lean.",
   },
-  {
-    title: "AI achieves silver-medal standard solving International Mathematical Olympiad problems",
-    date: "Jul 25, 2024",
-    href: "https://deepmind.google/discover/blog/ai-solves-imo-problems-at-silver-medal-level/",
-    external: true,
-    excerpt:
-      "The official DeepMind announcement — how AlphaProof and AlphaGeometry 2 combined search and reinforcement learning to solve olympiad-level mathematics problems.",
-  },
 ];
 
 export default function BlogPage() {
