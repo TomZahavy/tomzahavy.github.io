@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { socialLinks } from "@/lib/data";
+import AboutGallery, { type GalleryImage } from "@/components/AboutGallery";
+import galleryImages from "@/lib/about-gallery.json";
 
 export const metadata: Metadata = {
   title: "About — Tom Zahavy",
@@ -51,6 +53,13 @@ export default function AboutPage() {
             </a>
           ))}
         </div>
+      </section>
+
+      <section className="mt-12">
+        <h2 className="text-sm font-medium uppercase tracking-wide text-muted">
+          In photos
+        </h2>
+        <AboutGallery images={galleryImages as GalleryImage[]} />
       </section>
     </div>
   );
