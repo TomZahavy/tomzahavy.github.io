@@ -12,7 +12,7 @@ export default function AboutPage() {
 
       <div className="mt-6 space-y-4 leading-relaxed text-foreground/90">
         <p>
-          I&apos;m a Senior Research Scientist at Google DeepMind, where I
+          I&apos;m a Research Scientist at Google DeepMind, where I
           work on reinforcement learning &mdash; from foundational questions
           about objectives beyond a single scalar reward, to applying RL to
           mathematics, games, and reasoning in large language models.

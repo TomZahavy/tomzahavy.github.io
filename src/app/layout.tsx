@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Tom Zahavy",
   description:
-    "Tom Zahavy — Senior Research Scientist at Google DeepMind, working on reinforcement learning.",
+    "Tom Zahavy — Research Scientist at Google DeepMind, working on reinforcement learning.",
 };
 
 const themeInitScript = `

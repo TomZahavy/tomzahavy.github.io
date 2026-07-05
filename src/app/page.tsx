@@ -16,7 +16,7 @@ export default function Home() {
         />
         <div>
           <h1 className="text-2xl font-semibold tracking-tight">Tom Zahavy</h1>
-          <p className="mt-1 text-muted">Senior Research Scientist, Google DeepMind</p>
+          <p className="mt-1 text-muted">Research Scientist, Google DeepMind</p>
           <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-sm">
             {socialLinks.map((link) => (
               <a
@@ -34,10 +34,10 @@ export default function Home() {
       </section>
 
       <p className="mt-8 leading-relaxed text-foreground/90">
-        I work on reinforcement learning at Google DeepMind &mdash; general
-        objectives beyond a single scalar reward, meta-learning, and
-        diversity in decision-making &mdash; and on applying these ideas to
-        mathematics, games, and reasoning in large language models.
+        I co-lead the Discovery team at Google DeepMind in London, where
+        I&apos;ve worked since 2019. My recent research focuses on hard problems
+        that demand creativity and aesthetic taste &mdash; in particular chess,
+        mathematics, and computational origami. A few highlights are below.
       </p>
 
       <section className="mt-12">

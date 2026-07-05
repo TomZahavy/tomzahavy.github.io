@@ -190,7 +190,7 @@ export const PUBLICATION_METHODS = [
   "Aesthetics",
 ] as const;
 
-export const PUBLICATION_DOMAINS = ["Chess", "Math", "Physics", "Games"] as const;
+export const PUBLICATION_DOMAINS = ["Chess", "Math", "Physics", "Games", "Patents"] as const;
 
 const ME = "Tom Zahavy";
 
@@ -551,7 +551,7 @@ const pubTags: Record<string, { domains?: string[]; methods?: string[] }> = {
   "Graying the black box: Understanding DQNs": { domains: ["Games"] },
   "Learn What Not to Learn: Action Elimination with Deep Reinforcement Learning": { domains: ["Games"] },
   "Deep learning reconstruction of ultrashort pulses": { domains: ["Physics"] },
-  "Olympiad-level formal mathematical reasoning with reinforcement learning (AlphaProof)": { domains: ["Math"] },
+  "Olympiad-level formal mathematical reasoning with reinforcement learning (AlphaProof)": { methods: ["Planning"], domains: ["Math"] },
   "Reward is enough for convex MDPs": { methods: ["Intrinsic reward"] },
   "A Self-Tuning Actor-Critic Algorithm": { methods: ["Meta RL"], domains: ["Games"] },
   "Bootstrapped Meta Learning": { methods: ["Meta RL"], domains: ["Games"] },
@@ -577,12 +577,14 @@ const pubTags: Record<string, { domains?: string[]; methods?: string[] }> = {
   "POMRL: No-Regret Learning-to-Plan with Increasing Horizons": { methods: ["Meta RL", "Planning"] },
   "Generating Creative Chess Puzzles (PuzzleGen)": { methods: ["Aesthetics", "Diversity"], domains: ["Chess", "Games"] },
   "Evaluating In Silico Creativity: An Expert Review of AI Chess Compositions": { methods: ["Aesthetics"], domains: ["Chess", "Games"] },
-  "Reinforcement learning by solution of a convex Markov decision process": { methods: ["Intrinsic reward"] },
+  "Reinforcement learning by solution of a convex Markov decision process": { methods: ["Intrinsic reward"], domains: ["Patents"] },
   "Improving techniques for diagnostics of laser pulses by compact representations": { domains: ["Physics"] },
   "COrigami: An AI Pipeline for Co-Designing Flat-Foldable Visually Recognisable Origami": { methods: ["Aesthetics"], domains: ["Math"] },
-  "Meta-learned evolutionary strategies optimizer": { methods: ["Meta RL"] },
-  "Neural network reinforcement learning with diverse policies": { methods: ["Diversity"] },
-  "Learning options for action selection with meta-gradients in multi-task reinforcement learning": { methods: ["Hierarchical RL", "Meta RL"] },
+  "Meta-learned evolutionary strategies optimizer": { methods: ["Meta RL"], domains: ["Patents"] },
+  "Neural network reinforcement learning with diverse policies": { methods: ["Diversity"], domains: ["Patents"] },
+  "Learning options for action selection with meta-gradients in multi-task reinforcement learning": { methods: ["Hierarchical RL", "Meta RL"], domains: ["Patents"] },
+  "Systems, method, and non-transitory computer-readable storage media for multi-modal product classification": { domains: ["Patents"] },
+  "Methods and systems for constrained reinforcement learning": { domains: ["Patents"] },
   "APART: Diverse Skill Discovery using All Pairs with Ascending Reward and DropouT": { methods: ["Diversity"] },
 };
 
