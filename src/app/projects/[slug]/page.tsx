@@ -116,24 +116,10 @@ export default async function ProjectPage({ params }: Props) {
         </div>
       ) : null}
 
-      <section className="mt-10 grid gap-8 sm:grid-cols-[1fr_220px]">
-        <div className="space-y-4 leading-relaxed text-foreground/90">
-          {project.body.map((paragraph, i) => (
-            <p key={i}>{paragraph}</p>
-          ))}
-        </div>
-        {project.video && (
-          <div>
-            <Image
-              src={project.image}
-              alt={project.title}
-              width={800}
-              height={500}
-              sizes="(max-width: 640px) 100vw, 220px"
-              className="w-full rounded-xl border border-border object-cover"
-            />
-          </div>
-        )}
+      <section className="mt-10 space-y-4 leading-relaxed text-foreground/90">
+        {project.body.map((paragraph, i) => (
+          <p key={i}>{paragraph}</p>
+        ))}
       </section>
 
       {project.puzzles && (
