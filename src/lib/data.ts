@@ -177,12 +177,24 @@ export type Publication = {
   /** Direct link; if omitted, the page links to a Google Scholar title search. */
   href?: string;
   citations: number;
+  domains?: string[];
+  methods?: string[];
 };
+
+export const PUBLICATION_METHODS = [
+  "Hierarchical RL",
+  "Meta RL",
+  "Intrinsic reward",
+  "Diversity",
+  "Aesthetics",
+] as const;
+
+export const PUBLICATION_DOMAINS = ["Chess", "Math", "Physics", "Games"] as const;
 
 const ME = "Tom Zahavy";
 
 // Ordered by Google Scholar citation count (descending).
-export const publications: Publication[] = [
+const basePublications: Publication[] = [
   {
     title: "A Deep Hierarchical Approach to Lifelong Learning in Minecraft",
     authors: ["Chen Tessler", "Shahar Givony", ME, "Daniel J Mankowitz", "Shie Mannor"],
@@ -529,6 +541,53 @@ export const publications: Publication[] = [
     citations: 0,
   },
 ];
+
+// Domain/method keyword tags, keyed by exact title. Untagged papers show only
+// in the unfiltered (default) view.
+const pubTags: Record<string, { domains?: string[]; methods?: string[] }> = {
+  "A Deep Hierarchical Approach to Lifelong Learning in Minecraft": { methods: ["Hierarchical RL"], domains: ["Games"] },
+  "Graying the black box: Understanding DQNs": { domains: ["Games"] },
+  "Learn What Not to Learn: Action Elimination with Deep Reinforcement Learning": { domains: ["Games"] },
+  "Deep learning reconstruction of ultrashort pulses": { domains: ["Physics"] },
+  "Olympiad-level formal mathematical reasoning with reinforcement learning (AlphaProof)": { domains: ["Math"] },
+  "Reward is enough for convex MDPs": { methods: ["Intrinsic reward"] },
+  "A Self-Tuning Actor-Critic Algorithm": { methods: ["Meta RL"], domains: ["Games"] },
+  "Bootstrapped Meta Learning": { methods: ["Meta RL"], domains: ["Games"] },
+  "Discovering Evolution Strategies via Meta-Black-Box Optimization": { methods: ["Meta RL"] },
+  "Discovering Policies with DOMiNO: Diversity Optimization Maintaining Near Optimality": { methods: ["Diversity"] },
+  "Discovery of Options via Meta-Learned Subgoals": { methods: ["Hierarchical RL", "Meta RL"] },
+  "Shallow Updates for Deep Reinforcement Learning": { domains: ["Games"] },
+  "Discovering Attention-Based Genetic Algorithms via Meta-Black-Box Optimization": { methods: ["Meta RL"] },
+  "Mastering board games by external and internal planning with language models": { domains: ["Chess", "Games"] },
+  "Diversifying AI: Towards Creative Chess with AlphaZero (AlphaZero db)": { methods: ["Diversity", "Aesthetics"], domains: ["Chess", "Games"] },
+  "Discovering a set of policies for the worst case reward": { methods: ["Diversity"] },
+  "Deep learning reconstruction of ultrashort pulses from 2D spatial intensity patterns recorded by an all-in-line system in a single-shot": { domains: ["Physics"] },
+  "Balancing Constraints and Rewards with Meta-Gradient D4PG": { methods: ["Meta RL"] },
+  "Discovering Diverse Nearly Optimal Policies with Successor Features": { methods: ["Diversity"] },
+  "Deep neural networks in single-shot ptychography": { domains: ["Physics"] },
+  "Action assembly: Sparse imitation learning for text-based games with combinatorial action spaces": { domains: ["Games"] },
+  "Visualizing dynamics: from t-SNE to semi-MDPs": { methods: ["Hierarchical RL"], domains: ["Games"] },
+  "Meta Gradients in Non Stationary Environments": { methods: ["Meta RL"] },
+  "Planning in Hierarchical Reinforcement Learning: Guarantees for Using Local Policies": { methods: ["Hierarchical RL"] },
+  "PALM up: Playing in the Latent Manifold for Unsupervised Pretraining": { methods: ["Intrinsic reward"] },
+  "Optimistic Meta-Gradients": { methods: ["Meta RL"] },
+  "LLMs can't jump": { domains: ["Physics", "Math"] },
+  "POMRL: No-Regret Learning-to-Plan with Increasing Horizons": { methods: ["Meta RL"] },
+  "Generating Creative Chess Puzzles (PuzzleGen)": { methods: ["Aesthetics", "Diversity"], domains: ["Chess", "Games"] },
+  "Evaluating In Silico Creativity: An Expert Review of AI Chess Compositions": { methods: ["Aesthetics"], domains: ["Chess", "Games"] },
+  "Reinforcement learning by solution of a convex Markov decision process": { methods: ["Intrinsic reward"] },
+  "Improving techniques for diagnostics of laser pulses by compact representations": { domains: ["Physics"] },
+  "COrigami: An AI Pipeline for Co-Designing Flat-Foldable Visually Recognisable Origami": { methods: ["Aesthetics"], domains: ["Math"] },
+  "Meta-learned evolutionary strategies optimizer": { methods: ["Meta RL"] },
+  "Neural network reinforcement learning with diverse policies": { methods: ["Diversity"] },
+  "Learning options for action selection with meta-gradients in multi-task reinforcement learning": { methods: ["Hierarchical RL", "Meta RL"] },
+  "APART: Diverse Skill Discovery using All Pairs with Ascending Reward and DropouT": { methods: ["Diversity"] },
+};
+
+export const publications: Publication[] = basePublications.map((p) => ({
+  ...p,
+  ...pubTags[p.title],
+}));
 
 export const socialLinks = [
   { label: "Email", href: "mailto:tomzahavy@gmail.com" },
