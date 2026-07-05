@@ -74,7 +74,7 @@ export default async function ProjectPage({ params }: Props) {
           controls
         />
       ) : project.heroNatural ? (
-        <div className="mt-10 overflow-hidden rounded-xl border border-border bg-white p-4">
+        <div className="mt-10 overflow-hidden rounded-xl border border-border">
           <Image
             src={project.image}
             alt={project.title}
@@ -85,18 +85,7 @@ export default async function ProjectPage({ params }: Props) {
             className="w-full"
           />
         </div>
-      ) : (
-        <div className="relative mt-10 aspect-[16/10] w-full overflow-hidden rounded-xl border border-border">
-          <Image
-            src={project.image}
-            alt={project.title}
-            fill
-            priority
-            sizes="(max-width: 768px) 100vw, 720px"
-            className="object-cover"
-          />
-        </div>
-      )}
+      ) : null}
 
       <section className="mt-10 grid gap-8 sm:grid-cols-[1fr_220px]">
         <div className="space-y-4 leading-relaxed text-foreground/90">

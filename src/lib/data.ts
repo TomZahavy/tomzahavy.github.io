@@ -26,6 +26,7 @@ export const featuredProjects: Project[] = [
     description:
       "An AI system that taught itself to prove mathematical theorems in Lean, reaching silver-medal performance at the International Mathematical Olympiad through continuous reinforcement learning.",
     image: "/projects/alphaproof.webp",
+    heroNatural: { width: 1061, height: 1061 },
     links: [
       { label: "Nature", href: "https://www.nature.com/articles/s41586-025-09833-y" },
       { label: "Blog", href: "https://www.tomzahavy.com/post/how-we-achieved-an-imo-medal-one-year-before-everyone-else" },
@@ -43,6 +44,7 @@ export const featuredProjects: Project[] = [
     description:
       "Combines reinforcement learning with Gemini to design origami crease patterns, using a semantic representation and visual feedback loop to fold arbitrary target shapes.",
     image: "/projects/corigami.webp",
+    heroNatural: { width: 1400, height: 1192 },
     links: [
       { label: "Paper", href: "https://arxiv.org/pdf/2606.26299v1" },
       { label: "Crease Patterns", href: "/files/origami_samples.zip" },
@@ -118,6 +120,7 @@ export const featuredProjects: Project[] = [
     description:
       "Explores diversity in AI decision-making by training a league of agents with distinct playing styles, revealing multiple qualitatively different ways to play chess at a superhuman level.",
     image: "/projects/azdb.webp",
+    heroNatural: { width: 1024, height: 1024 },
     links: [
       { label: "Paper", href: "https://arxiv.org/abs/2308.09175" },
       { label: "Quanta", href: "/files/quanta-alphazero.pdf" },
@@ -133,6 +136,7 @@ export const featuredProjects: Project[] = [
     description:
       "A position paper examining a fundamental limitation of large language models: their difficulty with abductive reasoning, a capacity central to genuine scientific invention.",
     image: "/projects/llms-cant-jump.webp",
+    heroNatural: { width: 1600, height: 893 },
     links: [
       { label: "Position paper", href: "/files/llms-cant-jump.pdf" },
     ],
