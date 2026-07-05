@@ -16,7 +16,7 @@ export type Project = {
   video?: string;
   videos?: { id: string; title: string; start?: number }[];
   gallery?: { src: string; title: string }[];
-  embed?: { src: string; title: string; caption?: string };
+  puzzles?: { name: string; fen: string; url: string }[];
 };
 
 export const featuredProjects: Project[] = [
@@ -91,12 +91,17 @@ export const featuredProjects: Project[] = [
       { label: "lichess blog", href: "https://lichess.org/@/tomas135/blog/ai-generated-chess-puzzles/j4zc0pmZ" },
       { label: "lichess puzzles", href: "https://lichess.org/study/dLYe8R4f" },
     ],
-    embed: {
-      src: "https://lichess.org/study/embed/dLYe8R4f/gB1e3yi1",
-      title: "AI-generated chess puzzles on Lichess",
-      caption:
-        "A selection of the generated puzzles as a Lichess study — use the chapter arrows to move through all nine. The full collection is also on chess.com.",
-    },
+    puzzles: [
+      { name: "Puzzle 1", fen: "1r1r2k1/Q2p1R1p/2p2R2/1p3pB1/1P4q1/8/5K2/8 w - - 0 1", url: "https://lichess.org/study/dLYe8R4f/gB1e3yi1" },
+      { name: "Puzzle 2", fen: "1qb5/5k2/P1Qp1bNp/2pP1P2/2P1pP1P/8/3rB1R1/4K3 b - - 0 1", url: "https://lichess.org/study/dLYe8R4f/XgVtlkmn" },
+      { name: "Puzzle 3", fen: "rnbqrbk1/pp3Rp1/2p1p1N1/3p1P1Q/3PnB2/2P5/PP3P1P/6K1 w - - 0 1", url: "https://lichess.org/study/dLYe8R4f/pJunW65A" },
+      { name: "Puzzle 4", fen: "r4b1k/pq1PN1pp/nn1Q4/2p3P1/2p4P/1Pp5/P7/2KR4 w - - 0 1", url: "https://lichess.org/study/dLYe8R4f/WDSA8sat" },
+      { name: "Puzzle 5", fen: "8/4p3/p4p2/P1K2b2/BP1p2k1/2P1n3/3P2P1/8 w - - 0 1", url: "https://lichess.org/study/dLYe8R4f/WS1QOuYQ" },
+      { name: "Puzzle 6", fen: "8/3k1p2/3Pb3/2K5/7p/p7/3R2P1/8 b - - 0 1", url: "https://lichess.org/study/dLYe8R4f/GC2KQ4kG" },
+      { name: "Puzzle 7", fen: "1q4rk/ppr1PQpp/1b3R2/3R4/1P6/4P3/P5PP/6K1 w - - 0 1", url: "https://lichess.org/study/dLYe8R4f/f3RBXGbv" },
+      { name: "Puzzle 8", fen: "6rk/Q7/3q4/5p2/2PP1P2/P5Pr/7P/R4RK1 b - - 0 1", url: "https://lichess.org/study/dLYe8R4f/R7FqNmNF" },
+      { name: "Puzzle 9", fen: "r4r1k/6pp/4Q3/5pN1/p2P1P2/1P5P/q5P1/2R4K w - - 0 1", url: "https://lichess.org/study/dLYe8R4f/RYRHmpUn" },
+    ],
     videos: [
       { id: "e47VomRFhAU", title: "GothamChess" },
       { id: "DeiD0RVAX7U", title: "Hikaru Nakamura" },

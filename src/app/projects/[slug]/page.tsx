@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { featuredProjects } from "@/lib/data";
 import GalleryPager from "@/components/GalleryPager";
+import PuzzleTrainer from "@/components/PuzzleTrainer";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -117,25 +118,19 @@ export default async function ProjectPage({ params }: Props) {
         )}
       </section>
 
-      {project.embed && (
+      {project.puzzles && (
         <section className="mt-12">
           <h2 className="text-sm font-medium uppercase tracking-wide text-muted">
             Try the puzzles
           </h2>
-          <div className="mt-4 overflow-hidden rounded-xl border border-border">
-            <iframe
-              src={project.embed.src}
-              title={project.embed.title}
-              loading="lazy"
-              allowFullScreen
-              className="h-[420px] w-full sm:h-[480px]"
-            />
+          <p className="mt-2 text-sm leading-relaxed text-muted">
+            Nine of the generated positions &mdash; drag the pieces to play out
+            your line. Open any one on Lichess for the full analysis board, or
+            browse the whole set on chess.com.
+          </p>
+          <div className="mt-4 rounded-xl border border-border bg-card p-4 sm:p-6">
+            <PuzzleTrainer puzzles={project.puzzles} />
           </div>
-          {project.embed.caption && (
-            <p className="mt-3 text-sm leading-relaxed text-muted">
-              {project.embed.caption}
-            </p>
-          )}
         </section>
       )}
 
