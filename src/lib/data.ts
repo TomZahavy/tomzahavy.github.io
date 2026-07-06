@@ -84,6 +84,7 @@ export const featuredProjects: Project[] = [
     designers: [
       { name: "The Plant Psychologist", sub: "YouTube", href: "https://www.youtube.com/@ThePlantPsychologist", image: "/projects/origami-designers/plant.webp" },
       { name: "Brandon Wong", sub: "Crease patterns", href: "https://web.mit.edu/wongb/www/origami/", image: "/projects/origami-designers/wong.webp" },
+      { name: "Abrashi Origami", sub: "abrashiorigami.com", href: "https://abrashiorigami.com/", image: "/projects/origami-designers/abrashi-web.webp" },
       { name: "Abrashi Origami", sub: "YouTube", href: "https://www.youtube.com/@abrashiorigami6622", image: "/projects/origami-designers/abrashi.webp" },
       { name: "Michał Kosmulski", sub: "origami.kosmulski.org", href: "https://origami.kosmulski.org/", image: "/projects/origami-designers/kosmulski.webp" },
       { name: "Robert J. Lang", sub: "Origami Design Secrets", href: "https://langorigami.com/publication/origami-design-secrets-2nd-edition/", image: "/projects/origami-designers/lang.webp" },
