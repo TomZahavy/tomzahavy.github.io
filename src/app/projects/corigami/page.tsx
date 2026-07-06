@@ -97,7 +97,8 @@ export default function CorigamiPage() {
         </p>
         <p>
           By pairing algorithmic optimisation with an autonomous aesthetic
-          critic, the system acts as a collaborative assistant — it produces
+          critic and optimising it with RL, the system acts as a collaborative
+          assistant — it produces
           mathematically sound starting points that human artists can expand and
           shape into a finished, physical model.
         </p>
