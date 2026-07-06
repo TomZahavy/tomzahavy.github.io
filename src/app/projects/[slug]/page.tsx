@@ -11,7 +11,10 @@ type Props = {
 };
 
 export function generateStaticParams() {
-  return featuredProjects.map((project) => ({ slug: project.slug }));
+  // corigami has its own bespoke page at app/projects/corigami/page.tsx
+  return featuredProjects
+    .filter((project) => project.slug !== "corigami")
+    .map((project) => ({ slug: project.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
