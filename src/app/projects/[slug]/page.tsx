@@ -202,6 +202,47 @@ export default async function ProjectPage({ params }: Props) {
         </section>
       )}
 
+      {project.designers && (
+        <section className="mt-12">
+          <h2 className="text-sm font-medium uppercase tracking-wide text-muted">
+            Learn more from origami designers
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-muted">
+            COrigami was made possible by the origami designers and artists whose
+            craft, crease patterns, and feedback guided this work. Explore and
+            learn from them below.
+          </p>
+          <div className="mt-4 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-3">
+            {project.designers.map((d) => (
+              <a
+                key={d.href}
+                href={d.href}
+                target="_blank"
+                rel="noreferrer"
+                className="group w-60 shrink-0 snap-start overflow-hidden rounded-xl border border-border bg-card transition-colors hover:border-accent"
+              >
+                <div className="aspect-[4/3] w-full overflow-hidden border-b border-border bg-white">
+                  <Image
+                    src={d.image}
+                    alt={d.name}
+                    width={1000}
+                    height={750}
+                    sizes="240px"
+                    className="h-full w-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.03]"
+                  />
+                </div>
+                <div className="p-3">
+                  <p className="text-sm font-medium leading-snug group-hover:text-accent">
+                    {d.name} <span className="text-muted">&#8599;</span>
+                  </p>
+                  <p className="mt-0.5 text-xs text-muted">{d.sub}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
+
       <nav className="mt-14 flex items-center justify-between border-t border-border pt-8">
         <Link
           href="/"

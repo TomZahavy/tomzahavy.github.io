@@ -24,6 +24,7 @@ export type Project = {
   video?: string;
   videos?: { id: string; title: string; start?: number }[];
   gallery?: { src: string; title: string }[];
+  designers?: { name: string; sub: string; href: string; image: string }[];
   puzzles?: { name: string; fen: string; url: string }[];
 };
 
@@ -79,6 +80,14 @@ export const featuredProjects: Project[] = [
       { src: "/projects/origami/elk.mp4", title: "Elk" },
       { src: "/projects/origami/moose.mp4", title: "Moose" },
       { src: "/projects/origami/bull-moose.mp4", title: "Bull Moose" },
+    ],
+    designers: [
+      { name: "The Plant Psychologist", sub: "YouTube", href: "https://www.youtube.com/@ThePlantPsychologist", image: "/projects/origami-designers/plant.webp" },
+      { name: "Brandon Wong", sub: "Crease patterns", href: "https://web.mit.edu/wongb/www/origami/", image: "/projects/origami-designers/wong.webp" },
+      { name: "Abrashi Origami", sub: "YouTube", href: "https://www.youtube.com/@abrashiorigami6622", image: "/projects/origami-designers/abrashi.webp" },
+      { name: "Michał Kosmulski", sub: "origami.kosmulski.org", href: "https://origami.kosmulski.org/", image: "/projects/origami-designers/kosmulski.webp" },
+      { name: "Robert J. Lang", sub: "Origami Design Secrets", href: "https://langorigami.com/publication/origami-design-secrets-2nd-edition/", image: "/projects/origami-designers/lang.webp" },
+      { name: "Nick Robinson", sub: "nickorigami.com", href: "https://nickorigami.com/", image: "/projects/origami-designers/nick.webp" },
     ],
     body: [
       "Origami is a unique mix of math, art, and design. Creating Origami involves turning abstract concepts into real-world objects. To tackle this, COrigami calls Gemini to generate a semantic stick figure --an abstract JSON code--refined through a visual feedback loop. It then calls custom packing, solving, shaping, and simulation tools. Driven by another self improvement RL loop, the system produces visually recognizable models represented as SVG crease patterns.",
