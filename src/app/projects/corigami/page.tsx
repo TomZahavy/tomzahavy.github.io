@@ -4,6 +4,9 @@ import Link from "next/link";
 import { featuredProjects } from "@/lib/data";
 import GalleryPager from "@/components/GalleryPager";
 
+const DEMO_URL =
+  "https://serve-dot-zipline.appspot.com/asset/51eb48ae-72ee-569e-b150-a7a6a163a204/zpc/7uyy7yzulja/";
+
 const project = featuredProjects.find((p) => p.slug === "corigami")!;
 const nextProject =
   featuredProjects[
@@ -88,6 +91,31 @@ export default function CorigamiPage() {
           Designed with COrigami, shaped and folded by Brandon Wong.
         </figcaption>
       </figure>
+
+      {/* Interactive demo */}
+      <section className="mt-8">
+        <div className="overflow-hidden rounded-xl border border-border bg-white">
+          <iframe
+            src={DEMO_URL}
+            title="Interactive origami simulator"
+            loading="lazy"
+            allowFullScreen
+            className="h-[440px] w-full sm:h-[560px]"
+          />
+        </div>
+        <p className="mt-2 text-center text-xs text-muted">
+          Interactive fold simulator &mdash; drag to rotate, use the slider to
+          fold and unfold.{" "}
+          <a
+            href={DEMO_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="text-accent hover:underline"
+          >
+            Open fullscreen &#8599;
+          </a>
+        </p>
+      </section>
 
       {/* Overview */}
       <section className="mt-12 space-y-4 leading-relaxed text-foreground/90">
