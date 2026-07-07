@@ -92,31 +92,6 @@ export default function CorigamiPage() {
         </figcaption>
       </figure>
 
-      {/* Interactive demo */}
-      <section className="mt-8">
-        <div className="overflow-hidden rounded-xl border border-border bg-white">
-          <iframe
-            src={DEMO_URL}
-            title="Interactive origami simulator"
-            loading="lazy"
-            allowFullScreen
-            className="h-[440px] w-full sm:h-[560px]"
-          />
-        </div>
-        <p className="mt-2 text-center text-xs text-muted">
-          Interactive fold simulator &mdash; drag to rotate, use the slider to
-          fold and unfold.{" "}
-          <a
-            href={DEMO_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="text-accent hover:underline"
-          >
-            Open fullscreen &#8599;
-          </a>
-        </p>
-      </section>
-
       {/* Overview */}
       <section className="mt-12 space-y-4 leading-relaxed text-foreground/90">
         <p>
@@ -230,6 +205,36 @@ export default function CorigamiPage() {
           </div>
         </section>
       )}
+
+      {/* Interactive demo */}
+      <section className="mt-12">
+        <h2 className="text-sm font-medium uppercase tracking-wide text-muted">
+          Fold it yourself
+        </h2>
+        <p className="mt-2 text-sm leading-relaxed text-muted">
+          An interactive simulator for one of the generated crease patterns —
+          drag to rotate, and use the slider to fold and unfold.
+        </p>
+        <div className="mt-4 overflow-hidden rounded-xl border border-border bg-white">
+          <iframe
+            src={DEMO_URL}
+            title="Interactive origami simulator"
+            loading="lazy"
+            allowFullScreen
+            className="h-[440px] w-full sm:h-[560px]"
+          />
+        </div>
+        <p className="mt-2 text-right text-xs text-muted">
+          <a
+            href={DEMO_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="text-accent hover:underline"
+          >
+            Open fullscreen &#8599;
+          </a>
+        </p>
+      </section>
 
       <nav className="mt-14 flex items-center justify-between border-t border-border pt-8">
         <Link
