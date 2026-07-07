@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { featuredProjects } from "@/lib/data";
 import GalleryPager from "@/components/GalleryPager";
+import ScaledEmbed from "@/components/ScaledEmbed";
 
 const DEMO_URL =
   "https://serve-dot-zipline.appspot.com/asset/51eb48ae-72ee-569e-b150-a7a6a163a204/zpc/7uyy7yzulja/";
@@ -216,12 +217,11 @@ export default function CorigamiPage() {
           drag to rotate, and use the slider to fold and unfold.
         </p>
         <div className="mt-4 overflow-hidden rounded-xl border border-border bg-white">
-          <iframe
+          <ScaledEmbed
             src={DEMO_URL}
             title="Interactive origami simulator"
-            loading="lazy"
-            allowFullScreen
-            className="h-[440px] w-full sm:h-[560px]"
+            designWidth={720}
+            designHeight={560}
           />
         </div>
         <p className="mt-2 text-right text-xs text-muted">
