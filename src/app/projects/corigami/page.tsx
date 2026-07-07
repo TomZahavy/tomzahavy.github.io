@@ -74,7 +74,7 @@ export default function CorigamiPage() {
         </div>
       </header>
 
-      <div className="mt-10 overflow-hidden rounded-xl border border-border">
+      <figure className="mt-10 overflow-hidden rounded-xl border border-border">
         <Image
           src={project.image}
           alt={project.title}
@@ -84,7 +84,10 @@ export default function CorigamiPage() {
           sizes="(max-width: 768px) 100vw, 720px"
           className="w-full"
         />
-      </div>
+        <figcaption className="border-t border-border bg-card px-4 py-3 text-xs leading-relaxed text-muted">
+          Designed with COrigami, shaped and folded by Brandon Wong.
+        </figcaption>
+      </figure>
 
       {/* Overview */}
       <section className="mt-12 space-y-4 leading-relaxed text-foreground/90">
