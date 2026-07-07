@@ -10,10 +10,12 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
+// corigami and puzzlegen have their own bespoke pages under app/projects/<slug>/
+const BESPOKE_SLUGS = ["corigami", "puzzlegen"];
+
 export function generateStaticParams() {
-  // corigami has its own bespoke page at app/projects/corigami/page.tsx
   return featuredProjects
-    .filter((project) => project.slug !== "corigami")
+    .filter((project) => !BESPOKE_SLUGS.includes(project.slug))
     .map((project) => ({ slug: project.slug }));
 }
 
