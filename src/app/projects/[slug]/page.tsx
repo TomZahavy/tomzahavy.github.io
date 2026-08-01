@@ -10,8 +10,8 @@ type Props = {
   params: Promise<{ slug: string }>;
 };
 
-// corigami and puzzlegen have their own bespoke pages under app/projects/<slug>/
-const BESPOKE_SLUGS = ["corigami", "puzzlegen"];
+// These have their own bespoke pages under app/projects/<slug>/
+const BESPOKE_SLUGS = ["corigami", "puzzlegen", "rewards-are-gradients"];
 
 export function generateStaticParams() {
   return featuredProjects

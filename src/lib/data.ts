@@ -164,6 +164,22 @@ export const featuredProjects: Project[] = [
     ],
   },
   {
+    slug: "rewards-are-gradients",
+    title: "Rewards are Gradients",
+    description:
+      "A general theory of what an RL agent can be asked to do. When the goal is a convex function of the states an agent visits — exploration, imitation, diversity, constraints — the reward that solves it is the gradient of that objective.",
+    image: "/projects/gradients/hero.webp",
+    heroNatural: { width: 960, height: 540 },
+    links: [
+      { label: "Reward is enough for convex MDPs", href: "https://arxiv.org/abs/2106.00661" },
+      { label: "All publications", href: "/publications" },
+    ],
+    body: [
+      "The standard RL problem is a linear function: the inner product between the state-action occupancy and the reward vector. The occupancy is the distribution over states and actions an agent visits when following a policy, and the reward defines a priority over those pairs. Many goals of interest are not linear in the occupancy at all — visiting every state equally, matching another policy, being different from a set of policies, or staying within a constraint.",
+      "My main result is that these problems can be reformulated as convex-concave zero-sum games, which yields a non-stationary intrinsic reward for solving them. The reward turns out to be very simple and general: it is the gradient of the objective with respect to the state occupancy.",
+    ],
+  },
+  {
     slug: "llms-cant-jump",
     title: "LLMs can't jump",
     description:
