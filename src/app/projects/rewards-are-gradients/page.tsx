@@ -41,7 +41,6 @@ const papers = [
     href: "https://arxiv.org/abs/2106.00661",
     authors: "Tom Zahavy, Brendan O'Donoghue, Guillaume Desjardins, Satinder Singh",
     tldr: "We study non-linear and unsupervised objectives defined over the state occupancy of an RL agent — apprenticeship learning, diverse skill discovery, constrained MDPs, pure exploration. We show that maximising the gradient of such an objective, as an intrinsic reward, solves the problem efficiently, and propose a meta-algorithm that explains many existing algorithms as instances of it.",
-    kind: "Theory",
   },
   {
     title: "Discovering Policies with DOMiNO: Diversity Optimization Maintaining Near Optimality",
@@ -50,7 +49,6 @@ const papers = [
     authors:
       "Tom Zahavy, Yannick Schroecker, Feryal Behbahani, Kate Baumli, Sebastian Flennerhag, Shaobo Hou, Satinder Singh",
     tldr: "We propose intrinsic rewards for discovering quality-diverse policies and show that they adapt to changes in the environment.",
-    kind: "Empirical",
     image: {
       src: "/projects/gradients/domino.webp",
       width: 600,
@@ -65,7 +63,6 @@ const papers = [
     authors:
       "Tom Zahavy, Brendan O'Donoghue, Andre Barreto, Volodymyr Mnih, Sebastian Flennerhag, Satinder Singh",
     tldr: "We propose a method for discovering policies that are diverse in the space of successor features, while assuring that they are near optimal, using a constrained MDP.",
-    kind: "Empirical",
     image: {
       src: "/projects/gradients/successor-features.webp",
       width: 600,
@@ -80,7 +77,6 @@ const papers = [
     authors:
       "Tom Zahavy, Andre Barreto, Daniel J. Mankowitz, Shaobo Hou, Brendan O'Donoghue, Iurii Kemaev, Satinder Singh",
     tldr: "We propose a method for discovering a set of policies that perform well with respect to the worst-case reward when composed together. The sets it finds turn out to be diverse — distinct locomotion skills emerge without ever asking for them.",
-    kind: "Theory + empirical",
     image: {
       src: "/projects/gradients/worstcase.webp",
       width: 400,
@@ -96,7 +92,6 @@ const papers = [
     authors:
       "Ted Moskovitz, Brendan O'Donoghue, Vivek Veeriah, Sebastian Flennerhag, Satinder Singh, Tom Zahavy",
     tldr: "Gradient descent-ascent converges on average, but the current policy may never converge — in practice it oscillates between satisfying the constraint and maximising the reward. ReLOAD is a constrained-RL method with guaranteed last-iterate convergence, and empirically it removes the oscillation.",
-    kind: "Theory + empirical",
     image: {
       src: "/projects/gradients/reload.webp",
       width: 500,
@@ -110,7 +105,6 @@ const papers = [
     href: "https://arxiv.org/abs/1911.01679",
     authors: "Tom Zahavy, Alon Cohen, Haim Kaplan, Yishay Mansour",
     tldr: "We show that the well-known apprenticeship learning algorithm of Abbeel and Ng (2004) can be understood as a Frank-Wolfe method, and propose ways to accelerate it.",
-    kind: "Theory",
   },
   {
     title: "Online Apprenticeship Learning",
@@ -118,7 +112,6 @@ const papers = [
     href: "https://arxiv.org/abs/2102.06924",
     authors: "Lior Shani, Tom Zahavy, Shie Mannor",
     tldr: "The first apprenticeship learning algorithm that does not require solving an MDP at every iteration — both players play no-regret — with a regret analysis.",
-    kind: "Theory",
   },
   {
     title: "Inverse Reinforcement Learning in Contextual MDPs",
@@ -127,7 +120,6 @@ const papers = [
     authors:
       "Stav Belogolovsky, Philip Korsunsky, Shie Mannor, Chen Tessler, Tom Zahavy",
     tldr: "Recovering a reward that explains an expert's behaviour when the task itself varies with a context — another convex objective over occupancies, solved with the same descent-ascent recipe.",
-    kind: "Theory + empirical",
   },
 ];
 
@@ -333,10 +325,7 @@ export default function RewardsAreGradientsPage() {
                   </div>
                 )}
                 <div className="min-w-0">
-                  <p className="text-xs uppercase tracking-wide text-muted">
-                    {p.kind}
-                  </p>
-                  <h3 className="mt-1 font-medium leading-snug">
+                  <h3 className="font-medium leading-snug">
                     <a
                       href={p.href}
                       target="_blank"
