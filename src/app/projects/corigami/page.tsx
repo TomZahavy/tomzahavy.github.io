@@ -6,7 +6,7 @@ import GalleryPager from "@/components/GalleryPager";
 import ScaledEmbed from "@/components/ScaledEmbed";
 
 const DEMO_URL =
-  "https://serve-dot-zipline.appspot.com/asset/51eb48ae-72ee-569e-b150-a7a6a163a204/zpc/7uyy7yzulja/";
+  "https://serve-dot-zipline.appspot.com/asset/51eb48ae-72ee-569e-b150-a7a6a163a204/zpc/79cbw4dfzyg/";
 
 const project = featuredProjects.find((p) => p.slug === "corigami")!;
 const nextProject =
