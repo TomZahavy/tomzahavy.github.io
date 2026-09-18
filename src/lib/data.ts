@@ -187,9 +187,9 @@ export const featuredProjects: Project[] = [
     image: "/projects/llms-cant-jump.webp",
     heroNatural: { width: 1600, height: 893 },
     links: [
-      { label: "Position paper", href: "/files/llms-cant-jump.pdf" },
+      { label: "Paper", href: "/files/llms-cant-jump.pdf" },
+      { label: "ICML 2026", href: "https://openreview.net/forum?id=klU4737opt" },
       { label: "PhilSci-Archive", href: "https://philsci-archive.pitt.edu/28024/" },
-      { label: "OpenReview", href: "https://openreview.net/forum?id=klU4737opt" },
     ],
     body: [
       "I explore the fundamental nature of scientific invention, highlighting the critical gap between the ability of humans to create computational systems from physical intuition and current artificial intelligence capabilities. While modern Generative AI excels at pattern recognition (induction) and logical proofs (deduction), we argue it fundamentally lacks the capacity for \"abduction\"—the intuitive leap required to generate novel explanatory hypotheses.",
@@ -484,8 +484,8 @@ const basePublications: Publication[] = [
   {
     title: "LLMs can't jump",
     authors: [ME],
-    venue: "Position paper 2025",
-    href: "/files/llms-cant-jump.pdf",
+    venue: "ICML 2026 (position paper)",
+    href: "https://openreview.net/forum?id=klU4737opt",
     citations: 4,
   },
   {
