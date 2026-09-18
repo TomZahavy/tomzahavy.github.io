@@ -38,7 +38,7 @@ export const featuredProjects: Project[] = [
     heroNatural: { width: 1061, height: 1061 },
     links: [
       { label: "Nature", href: "https://www.nature.com/articles/s41586-025-09833-y" },
-      { label: "Blog", href: "https://www.tomzahavy.com/post/how-we-achieved-an-imo-medal-one-year-before-everyone-else" },
+      { label: "Blog", href: "/blog/how-we-achieved-an-imo-medal" },
       { label: "Announcement", href: "https://deepmind.google/blog/ai-solves-imo-problems-at-silver-medal-level/" },
       { label: "Lean", href: "https://lean-lang.org/" },
     ],
