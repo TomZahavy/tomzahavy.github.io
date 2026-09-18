@@ -13,57 +13,41 @@ const nextProject =
 
 const REFLECTIONS_URL = "https://x.com/TZahavy/status/2082401499628376180";
 const HN_URL = "https://news.ycombinator.com/item?id=49181083";
+const PHILSCI_URL = "https://philsci-archive.pitt.edu/28024/";
 
 export const metadata: Metadata = {
   title: `${project.title} — Tom Zahavy`,
   description: project.description,
 };
 
-const stats = [
-  { value: "Millions", label: "of views and engagements on X and LinkedIn" },
-  { value: "Hundreds", label: "of posts and articles discussing the paper" },
-  { value: "#1", label: "on Hacker News", href: HN_URL },
-  { value: "Top 10", label: "most-downloaded papers on PhilSci-Archive", href: "https://philsci-archive.pitt.edu/28024/" },
-];
-
-const press = [
+const coverage = [
   {
-    outlet: "Nature",
-    kind: "News feature",
-    title: "The Einstein test: what happens when AI tries to rediscover relativity?",
     author: "Philip Ball",
+    title: "The Einstein test: what happens when AI tries to rediscover relativity?",
+    outlet: "Nature",
+    kind: "news feature",
     date: "9 September 2026",
     href: "https://www.nature.com/articles/d41586-026-02804-x",
-    blurb:
-      "Nature's feature on 'vintage' LLMs trained on pre-1911 data and Demis Hassabis's proposed test for AGI. It traces the detailed case for the test back to this paper, and its argument that a relativity-like breakthrough needs abduction — a creative leap that invents a cause for a singular phenomenon — rather than induction from accumulated data.",
+    note: "On 'vintage' language models trained on pre-1911 data and whether they could rediscover general relativity. Presents the paper as the detailed case for the test, and its argument that such a breakthrough requires abduction rather than induction.",
   },
   {
-    outlet: "Ian Leslie",
-    kind: "Essay",
-    title: "Einstein, Churchill, and AI",
     author: "Ian Leslie",
+    title: "Einstein, Churchill, and AI",
+    outlet: "The Ruffian",
+    kind: "essay",
     date: "15 August 2026",
     href: "https://www.ian-leslie.com/p/einstein-churchill-and-ai",
-    blurb:
-      "Takes the paper's central example — Einstein's 1907 thought about a falling man feeling no weight — and asks what kind of insight it is. An LLM could have helped Einstein work out the consequences of his discovery, Leslie argues, but it could not have made the foundational leap for him; the piece then finds the same quality in Churchill.",
+    note: "An extended discussion of the paper's central example — Einstein's 1907 thought experiment — and its claim that the insight was grounded in physical experience rather than in words or symbols.",
   },
   {
-    outlet: "Noahpinion",
-    kind: "Essay",
-    title: "The End of the Age of Heroes",
     author: "Noah Smith",
+    title: "The End of the Age of Heroes",
+    outlet: "Noahpinion",
+    kind: "essay",
     date: "4 August 2026",
     href: "https://www.noahpinion.blog/p/the-end-of-the-age-of-heroes",
-    blurb:
-      "On what happens to mathematics when AI surpasses human researchers. Smith cites the paper as the case that models synthesise existing knowledge well but struggle with genuinely novel conceptual leaps — and, in keeping with the paper's own hedging, treats that as a possibly temporary limitation.",
+    note: "On AI systems solving open problems in mathematics; cites the paper for the possibility that novel conceptual leaps remain a general limitation of current models.",
   },
-];
-
-const reflections = [
-  "First things first: some people are framing this as “DeepMind is throwing cold water on AI for science” or claiming the paper argues LLMs can never make real scientific discoveries. This is not the case. This is a personal position paper, not the company’s view on AI for science. This is also not my position. As a core contributor to AlphaProof, I know firsthand that my colleagues at DeepMind, other frontier labs, and academia have made amazing discoveries with LLMs and will continue to do so. This paper is not an “LLMs are a dead end” kind of thing.",
-  "Rather, the paper is the result of a deep dive I took to study the invention of General Relativity. I wanted to explore what it would take for a modern AI system to make that exact kind of jump. Specifically, I focused on the equivalence principle — a key axiom that Einstein formulated through thought experiments grounded in his physical intuition. I was trying to figure out what it would take to give modern AI systems that sort of thinking.",
-  "Giving AI this specific capability isn’t necessarily the most urgent thing to do next. It is very likely that improving our current recipes will lead to many exciting discoveries in the near future. In fact, that is what I am personally working on these days. It is also quite possible that I am wrong, and that simply scaling our current systems will lead to new inventions in physics and elsewhere.",
-  "Nevertheless, this was my position last winter when I wrote the paper, and I’m sticking to it. I think that there are a few interesting ideas to explore in this space which could influence the next generation of AI systems.",
 ];
 
 export default function LlmsCantJumpPage() {
@@ -109,10 +93,10 @@ export default function LlmsCantJumpPage() {
           className="w-full"
         />
         <figcaption className="border-t border-border bg-card px-4 py-3 text-xs leading-relaxed text-muted">
-          Einstein&rsquo;s cycle of invention, from his letter to Maurice
-          Solovine: an intuitive <em>Jump</em> from sense experience to a system
-          of axioms, then deduction and experiment. The Jump is the step this
-          paper is about.
+          Einstein&rsquo;s model of invention, from his letter to Maurice
+          Solovine: an intuitive jump from sense experience to a system of
+          axioms, followed by deduction and experiment. The paper is about the
+          jump.
         </figcaption>
       </figure>
 
@@ -121,27 +105,6 @@ export default function LlmsCantJumpPage() {
         {project.body.map((paragraph, i) => (
           <p key={i}>{paragraph}</p>
         ))}
-        <p className="text-sm text-muted">
-          Position paper, January 2026. Also on{" "}
-          <a
-            href="https://philsci-archive.pitt.edu/28024/"
-            target="_blank"
-            rel="noreferrer"
-            className="text-accent hover:underline"
-          >
-            PhilSci-Archive
-          </a>{" "}
-          and{" "}
-          <a
-            href="https://openreview.net/forum?id=klU4737opt"
-            target="_blank"
-            rel="noreferrer"
-            className="text-accent hover:underline"
-          >
-            OpenReview
-          </a>
-          .
-        </p>
       </section>
 
       {/* Reception */}
@@ -150,98 +113,71 @@ export default function LlmsCantJumpPage() {
           Reception
         </h2>
         <p className="mt-2 leading-relaxed text-foreground/90">
-          The paper travelled a long way for a ten-page position piece. It was
-          discussed across X, LinkedIn, Hacker News and Reddit, and picked up by
-          science journalists and essayists asking the same question from
-          different angles: what would it take for AI to make an Einstein-sized
-          leap?
-        </p>
-        <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
-          {stats.map((s) => {
-            const inner = (
-              <>
-                <p className="text-2xl font-semibold tracking-tight">{s.value}</p>
-                <p className="mt-1 text-xs leading-snug text-muted">
-                  {s.label}
-                  {s.href && <span className="text-muted"> &#8599;</span>}
-                </p>
-              </>
-            );
-            return s.href ? (
-              <a
-                key={s.value}
-                href={s.href}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-xl border border-border bg-card p-4 transition-colors hover:border-accent"
-              >
-                {inner}
-              </a>
-            ) : (
-              <div key={s.value} className="rounded-xl border border-border bg-card p-4">
-                {inner}
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* Press */}
-      <section className="mt-12">
-        <h2 className="text-sm font-medium uppercase tracking-wide text-muted">
-          In the press
-        </h2>
-        <div className="mt-4 space-y-4">
-          {press.map((p) => (
-            <a
-              key={p.href}
-              href={p.href}
-              target="_blank"
-              rel="noreferrer"
-              className="group block rounded-xl border border-border bg-card p-5 transition-colors hover:border-accent"
-            >
-              <p className="text-xs uppercase tracking-wide text-muted">
-                {p.outlet} <span className="text-foreground/30">&middot;</span> {p.kind}
-              </p>
-              <h3 className="mt-1.5 font-medium leading-snug transition-colors group-hover:text-accent">
-                {p.title} <span className="text-muted">&#8599;</span>
-              </h3>
-              <p className="mt-1 text-sm text-muted">
-                {p.author} &middot; {p.date}
-              </p>
-              <p className="mt-3 text-sm leading-relaxed text-foreground/90">
-                {p.blurb}
-              </p>
-            </a>
-          ))}
-        </div>
-      </section>
-
-      {/* Reflections */}
-      <section className="mt-12">
-        <h2 className="text-sm font-medium uppercase tracking-wide text-muted">
-          My reflections
-        </h2>
-        <p className="mt-2 text-sm leading-relaxed text-muted">
-          Once the paper started circulating, I wrote a short note to clarify what
-          it does and doesn&rsquo;t claim.{" "}
-          <a
-            href={REFLECTIONS_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="text-accent hover:underline"
-          >
-            Read the original on X &#8599;
+          The paper was posted to{" "}
+          <a href={PHILSCI_URL} target="_blank" rel="noreferrer" className="text-accent hover:underline">
+            PhilSci-Archive
+          </a>{" "}
+          in January 2026, where it is among the ten most-downloaded papers.
+          It was widely discussed on X, LinkedIn and Reddit, reached the top of{" "}
+          <a href={HN_URL} target="_blank" rel="noreferrer" className="text-accent hover:underline">
+            Hacker News
           </a>
+          , and was covered in the science press and by essayists. Selected
+          coverage:
         </p>
-        <blockquote className="mt-4 space-y-4 rounded-xl border border-border bg-card p-5 leading-relaxed text-foreground/90 sm:p-6">
-          {reflections.map((para, i) => (
-            <p key={i}>{para}</p>
+        <ul className="mt-5 space-y-5">
+          {coverage.map((c) => (
+            <li key={c.href} className="leading-relaxed">
+              <p>
+                {c.author},{" "}
+                <a
+                  href={c.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="font-medium text-foreground transition-colors hover:text-accent"
+                >
+                  &ldquo;{c.title}&rdquo;
+                </a>
+                . <em>{c.outlet}</em> {c.kind}, {c.date}.
+              </p>
+              <p className="mt-1 text-sm leading-relaxed text-muted">{c.note}</p>
+            </li>
           ))}
-          <footer className="text-sm text-muted">
-            &mdash; 29 July 2026
-          </footer>
-        </blockquote>
+        </ul>
+      </section>
+
+      {/* Clarification */}
+      <section className="mt-12">
+        <h2 className="text-sm font-medium uppercase tracking-wide text-muted">
+          A note on scope
+        </h2>
+        <div className="mt-2 space-y-4 leading-relaxed text-foreground/90">
+          <p>
+            Some of the discussion framed the paper as an argument that LLMs
+            cannot make scientific discoveries, or as an institutional view.
+            It is neither. It is a personal position paper, and as a
+            contributor to{" "}
+            <Link href="/projects/alphaproof" className="text-accent hover:underline">
+              AlphaProof
+            </Link>{" "}
+            I have seen first-hand that LLM-based systems are already making
+            real discoveries, and will continue to.
+          </p>
+          <p>
+            The paper is narrower than that: it asks what it would take for a
+            system to make one specific kind of jump — Einstein&rsquo;s
+            formulation of the equivalence principle from thought experiments
+            grounded in physical intuition — and argues that current recipes do
+            not obviously supply it. Whether that capability is the most urgent
+            thing to build next is a separate question; it may well be that
+            scaling current systems is enough. I wrote up these clarifications
+            in{" "}
+            <a href={REFLECTIONS_URL} target="_blank" rel="noreferrer" className="text-accent hover:underline">
+              a short note
+            </a>{" "}
+            after the paper began circulating.
+          </p>
+        </div>
       </section>
 
       <nav className="mt-14 flex items-center justify-between border-t border-border pt-8">
