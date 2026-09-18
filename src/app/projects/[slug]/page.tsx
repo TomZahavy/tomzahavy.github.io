@@ -11,7 +11,7 @@ type Props = {
 };
 
 // These have their own bespoke pages under app/projects/<slug>/
-const BESPOKE_SLUGS = ["corigami", "puzzlegen", "rewards-are-gradients"];
+const BESPOKE_SLUGS = ["corigami", "puzzlegen", "rewards-are-gradients", "llms-cant-jump"];
 
 export function generateStaticParams() {
   return featuredProjects

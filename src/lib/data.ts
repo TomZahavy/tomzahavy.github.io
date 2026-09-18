@@ -188,6 +188,9 @@ export const featuredProjects: Project[] = [
     heroNatural: { width: 1600, height: 893 },
     links: [
       { label: "Position paper", href: "/files/llms-cant-jump.pdf" },
+      { label: "PhilSci-Archive", href: "https://philsci-archive.pitt.edu/28024/" },
+      { label: "OpenReview", href: "https://openreview.net/forum?id=klU4737opt" },
+      { label: "Reflections on X", href: "https://x.com/TZahavy/status/2082401499628376180" },
     ],
     body: [
       "I explore the fundamental nature of scientific invention, highlighting the critical gap between the ability of humans to create computational systems from physical intuition and current artificial intelligence capabilities. While modern Generative AI excels at pattern recognition (induction) and logical proofs (deduction), we argue it fundamentally lacks the capacity for \"abduction\"—the intuitive leap required to generate novel explanatory hypotheses.",
