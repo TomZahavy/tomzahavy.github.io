@@ -96,15 +96,17 @@ export const featuredProjects: Project[] = [
     ],
   },
   {
-    slug: "puzzlegen",
-    title: "PuzzleGen",
+    slug: "chess",
+    title: "Creative Chess",
     description:
-      "Generates original chess puzzles with reinforcement learning, rewarding uniqueness, counter-intuitiveness, and novelty. Evaluated by chess grandmasters and featured on lichess and chess.com.",
+      "What makes a chess idea creative? AlphaZero db, a league of superhuman players that think in different ways, and PuzzleGen, which composes original puzzles that grandmasters called beautiful.",
     image: "/projects/puzzlegen-puzzles.webp",
     heroNatural: { width: 1264, height: 1332 },
     links: [
-      { label: "Paper", href: "https://arxiv.org/abs/2510.23881" },
+      { label: "AlphaZero db", href: "https://arxiv.org/abs/2308.09175" },
+      { label: "PuzzleGen", href: "https://arxiv.org/abs/2510.23881" },
       { label: "GM review", href: "https://arxiv.org/abs/2510.23772" },
+      { label: "Open models", href: "https://arxiv.org/abs/2609.38577" },
     ],
     linkGroups: [
       {
@@ -145,22 +147,6 @@ export const featuredProjects: Project[] = [
     body: [
       "While strong chess players intuitively recognize the beauty of a position, articulating the precise elements that constitute creativity remains elusive. To address this, we pre-trained generative models on public datasets and then applied reinforcement learning, using novel rewards designed for uniqueness, counter-intuitiveness, realism, and novelty. This approach doubled the number of novel chess puzzles compared to the original training data, while successfully maintaining aesthetic diversity.",
       "Three distinguished experts—International Master of chess compositions Amatzia Avni (author of \"Creative Chess\"), Grandmaster Jonathan Levitt (author of \"Secrets of Spectacular Chess\"), and Grandmaster Matthew Sadler (author of \"Game Changer\")—evaluated and selected the puzzles they found most compelling. Their preference was for puzzles exhibiting original, paradoxical, surprising, and naturally occurring positions, with particular emphasis on those that integrated aesthetic themes in innovative ways and demonstrated exceptional over-the-board vision.",
-    ],
-  },
-  {
-    slug: "alphazero-db",
-    title: "AlphaZero db",
-    description:
-      "Explores diversity in AI decision-making by training a league of agents with distinct playing styles, revealing multiple qualitatively different ways to play chess at a superhuman level.",
-    image: "/projects/azdb.webp",
-    heroNatural: { width: 1024, height: 1024 },
-    links: [
-      { label: "Paper", href: "https://arxiv.org/abs/2308.09175" },
-      { label: "Quanta", href: "/files/quanta-alphazero.pdf" },
-    ],
-    body: [
-      "Artificial Intelligence (AI) systems have surpassed human intelligence in a variety of computational tasks. However, AI systems, like humans, make mistakes, have blind spots, hallucinate, and struggle to generalize to new situations. We explored whether AI systems can benefit from creative decision-making mechanisms when pushed to the limits of its computational rationality.",
-      "AlphaZerodb is a league of AlphaZero agents, represented via a latent-conditioned architecture, and trained with quality-diversity techniques to generate a wider range of ideas. It then selects the most promising ones with sub-additive planning. AlphaZerodb plays chess in diverse ways, solves more puzzles as a group and outperforms a more homogeneous team.",
     ],
   },
   {

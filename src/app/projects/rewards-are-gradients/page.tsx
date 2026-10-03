@@ -349,7 +349,7 @@ export default function RewardsAreGradientsPage() {
         </div>
         <p className="mt-4 text-sm leading-relaxed text-muted">
           The same ideas power{" "}
-          <Link href="/projects/alphazero-db" className="text-accent hover:underline">
+          <Link href="/projects/chess#alphazero-db" className="text-accent hover:underline">
             AlphaZero<sub>db</sub>
           </Link>
           , where quality-diversity objectives produce a league of chess agents

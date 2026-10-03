@@ -119,7 +119,7 @@ export default function ImoMedalPost() {
 
         <p>
           We experimented with various innovative problem-solving approaches (
-          <Link href="/projects/alphazero-db" className="text-accent hover:underline">
+          <Link href="/projects/chess#alphazero-db" className="text-accent hover:underline">
             read more about it here
           </Link>
           ), and our main takeaway was that when a quality-diverse group of
