@@ -35,9 +35,10 @@ export default function Home() {
 
       <p className="mt-8 leading-relaxed text-foreground/90">
         I co-lead the Discovery team at Google DeepMind in London, where
-        I&apos;ve worked since 2019. My recent research focuses on hard problems
-        that demand creativity and aesthetic taste &mdash; in particular chess,
-        mathematics, and computational origami. A few highlights are below.
+        I&apos;ve worked since 2019. My research is on reinforcement learning
+        for hard reasoning and long-horizon planning &mdash; mathematics,
+        chess, and origami design, where a solution takes many steps to find
+        and a single wrong step breaks it. A few highlights are below.
       </p>
 
       <section className="mt-12">
