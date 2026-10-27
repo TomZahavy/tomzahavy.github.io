@@ -30,6 +30,23 @@ export type Project = {
 
 export const featuredProjects: Project[] = [
   {
+    slug: "busy-beavers",
+    title: "Busy Beavers",
+    description:
+      "A Gemini-based agent that studies unresolved six-state Turing machines, discovers compact Collatz-like rules for how they run, and proves those rules in Lean — including eleven machines nobody had analysed before.",
+    image: "/projects/busy-beaver/spacetime.webp",
+    heroNatural: { width: 1680, height: 806 },
+    links: [
+      { label: "Paper", href: "https://arxiv.org/abs/2610.22603" },
+      { label: "Lean proofs", href: "https://github.com/google-deepmind/cryptids" },
+      { label: "bbchallenge wiki", href: "https://wiki.bbchallenge.org/wiki/Cryptid" },
+    ],
+    body: [
+      "The Busy Beaver number BB(n) is the longest any n-state Turing machine can run on a blank tape and still halt. The function is uncomputable, so every value has to be won by hand: you must settle every holdout machine, proving that it halts or that it runs forever. BB(5) was settled by the Busy Beaver Challenge community. In BB(6), some holdouts turn out to be Cryptids — machines whose behaviour reduces to a Collatz-like problem, so deciding whether they halt is as hard as an open question in number theory.",
+      "We built an agentic pipeline on Gemini that does this analysis end to end. It simulates a machine, compresses its tape into recurring patterns, conjectures an acceleration — a compact rule that jumps over many steps at once — tests the rule, writes an informal proof, and then proves it formally in Lean 4. Run across the BB(6) holdouts, it produced verified accelerations for eleven machines with no prior documented analysis, which we provisionally classify as new Cryptids pending community review, and formally re-derived the rules for fifteen machines the community had already studied.",
+    ],
+  },
+  {
     slug: "alphaproof",
     title: "AlphaProof",
     description:
