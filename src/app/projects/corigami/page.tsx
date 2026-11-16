@@ -6,7 +6,7 @@ import GalleryPager from "@/components/GalleryPager";
 import ScaledEmbed from "@/components/ScaledEmbed";
 
 const DEMO_URL =
-  "https://serve-dot-zipline.appspot.com/asset/51eb48ae-72ee-569e-b150-a7a6a163a204/zpc/79cbw4dfzyg/";
+  "https://serve-dot-zipline.appspot.com/asset/51eb48ae-72ee-569e-b150-a7a6a163a204/zpc/lrrbxnxaf62/";
 
 const project = featuredProjects.find((p) => p.slug === "corigami")!;
 const nextProject =
@@ -149,6 +149,28 @@ export default function CorigamiPage() {
             )}
           </figure>
         )}
+      </section>
+
+      {/* Open source */}
+      <section className="mt-12">
+        <h2 className="text-sm font-medium uppercase tracking-wide text-muted">
+          Open source
+        </h2>
+        <p className="mt-2 leading-relaxed text-foreground/90">
+          The packing, solving and shaping stages are released as{" "}
+          <a
+            href="https://github.com/google-deepmind/origami-design"
+            target="_blank"
+            rel="noreferrer"
+            className="text-accent hover:underline"
+          >
+            origami-design
+          </a>
+          , an Apache-licensed Python library and command-line tool. It turns a
+          stick figure into a flat-foldable box-pleated crease pattern and a
+          shaped 3D model, verifies global flat-foldability, and ships with 47
+          example stick figures to start from.
+        </p>
       </section>
 
       {/* Gallery */}

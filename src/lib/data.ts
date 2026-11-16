@@ -73,6 +73,7 @@ export const featuredProjects: Project[] = [
     heroNatural: { width: 1400, height: 1192 },
     links: [
       { label: "Paper", href: "https://arxiv.org/pdf/2606.26299v1" },
+      { label: "Code", href: "https://github.com/google-deepmind/origami-design" },
       { label: "Crease Patterns", href: "/files/origami_samples.zip" },
     ],
     figure: {
