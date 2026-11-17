@@ -74,6 +74,7 @@ export const featuredProjects: Project[] = [
     links: [
       { label: "Paper", href: "https://arxiv.org/pdf/2606.26299v1" },
       { label: "Code", href: "https://github.com/google-deepmind/origami-design" },
+      { label: "Studio", href: "https://www.tomzahavy.com/origami-design/" },
       { label: "Crease Patterns", href: "/files/origami_samples.zip" },
     ],
     figure: {

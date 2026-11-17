@@ -3,10 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { featuredProjects } from "@/lib/data";
 import GalleryPager from "@/components/GalleryPager";
-import ScaledEmbed from "@/components/ScaledEmbed";
+import StudioEmbed from "@/components/StudioEmbed";
 
-const DEMO_URL =
-  "https://serve-dot-zipline.appspot.com/asset/51eb48ae-72ee-569e-b150-a7a6a163a204/zpc/lrrbxnxaf62/";
+const STUDIO_URL = "https://www.tomzahavy.com/origami-design/";
+const STUDIO_START = `${STUDIO_URL}#golden-eagle`;
 
 const project = featuredProjects.find((p) => p.slug === "corigami")!;
 const nextProject =
@@ -229,26 +229,22 @@ export default function CorigamiPage() {
         </section>
       )}
 
-      {/* Interactive demo */}
+      {/* Interactive studio */}
       <section className="mt-12">
         <h2 className="text-sm font-medium uppercase tracking-wide text-muted">
           Fold it yourself
         </h2>
         <p className="mt-2 text-sm leading-relaxed text-muted">
-          An interactive simulator for one of the generated crease patterns —
-          drag to rotate, and use the slider to fold and unfold.
+          COrigami Studio folds ten of the designs in 3D. Drag to orbit, use the
+          slider to go from a flat sheet to the finished model, and inspect
+          each crease pattern alongside.
         </p>
         <div className="mt-4 overflow-hidden rounded-xl border border-border bg-white">
-          <ScaledEmbed
-            src={DEMO_URL}
-            title="Interactive origami simulator"
-            designWidth={720}
-            designHeight={560}
-          />
+          <StudioEmbed src={STUDIO_START} preview="/projects/origami-studio/golden-eagle.webp" />
         </div>
-        <p className="mt-2 text-right text-xs text-muted">
+        <p className="mt-2 hidden text-right text-xs text-muted sm:block">
           <a
-            href={DEMO_URL}
+            href={STUDIO_START}
             target="_blank"
             rel="noreferrer"
             className="text-accent hover:underline"
